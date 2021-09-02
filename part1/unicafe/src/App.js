@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-const StatisticsLine = ({text,value})=>{
+const StatisticsLine = ({value})=>{
   return(
-    <p>{text} : {value}</p>
+    <p>{value}</p>
   )
 }
 const Buttons =({text,task})=>{
@@ -18,12 +18,41 @@ const Statistics = ({good,neutral,bad})=>{
       {
         return(
         <div>
-          <StatisticsLine text="good" value={good}/>
-          <StatisticsLine text="Neutral" value={neutral}/> 
-          <StatisticsLine text="Bad" value={bad}/>
-          <StatisticsLine text="Total" value={total}/>
-          <StatisticsLine text="Average" value={average}/> 
-          <StatisticsLine text="Positive" value={goodPercntage}/>
+          <table>
+            <tbody>
+              <tr>
+                
+              </tr>
+              <tr>
+                <td> <StatisticsLine  value="Good"/></td>
+                <td> <StatisticsLine  value={good}/> </td>
+                
+              </tr><tr>
+                <td> <StatisticsLine  value="Neutral"/></td>
+                <td> <StatisticsLine  value={neutral}/> </td>
+                
+              </tr><tr>
+                <td> <StatisticsLine  value="Bad"/></td>
+                <td> <StatisticsLine  value={bad}/> </td>
+                
+              </tr>
+              <tr>
+                <td> <StatisticsLine  value="Total"/></td>
+                <td> <StatisticsLine  value={total}/> </td>
+                
+              </tr>
+              <tr>
+                <td> <StatisticsLine  value="Average"/></td>
+                <td> <StatisticsLine  value={average}/> </td>
+                
+              </tr><tr>
+                <td> <StatisticsLine  value="positive"/></td>
+                <td> <StatisticsLine  value={goodPercntage}/> </td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
       </div>
         )
     }
