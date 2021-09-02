@@ -1,4 +1,9 @@
 import React,{useState} from 'react';
+const StatisticsLine = ({text,value})=>{
+  return(
+    <p>{text} : {value}</p>
+  )
+}
 const Statistics = ({good,neutral,bad})=>{
   const average = good*1+neutral*0+bad*-1
   const goodPercntage = (good/(good+neutral+bad))*100
@@ -8,12 +13,12 @@ const Statistics = ({good,neutral,bad})=>{
       {
         return(
         <div>
-          <p>Good : {good}</p>
-          <p>Neuutral : {neutral}</p>
-          <p>Bad : {bad}</p>
-          <p>Total : {total}</p>
-          <p>Average : {average}</p>
-          <p>Positive : {goodPercntage} %</p>
+          <StatisticsLine text="good" value={good}/>
+          <StatisticsLine text="Neutral" value={neutral}/> 
+          <StatisticsLine text="Bad" value={bad}/>
+          <StatisticsLine text="Total" value={total}/>
+          <StatisticsLine text="Average" value={average}/> 
+          <StatisticsLine text="Positive" value={goodPercntage}/>
       </div>
         )
     }
