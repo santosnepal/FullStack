@@ -3,17 +3,25 @@ const Statistics = ({good,neutral,bad})=>{
   const average = good*1+neutral*0+bad*-1
   const goodPercntage = (good/(good+neutral+bad))*100
   const total = good+bad+neutral
-  return(
-    <div>
-      <h1>Statistics</h1>
-        <p>Good : {good}</p>
-        <p>Neuutral : {neutral}</p>
-        <p>Bad : {bad}</p>
-        <p>Total : {total}</p>
-        <p>Average : {average}</p>
-        <p>Positive : {goodPercntage} %</p>
-    </div>
-  )
+ 
+    if(good>0||bad>0||neutral>0)
+      {
+        return(
+        <div>
+          <p>Good : {good}</p>
+          <p>Neuutral : {neutral}</p>
+          <p>Bad : {bad}</p>
+          <p>Total : {total}</p>
+          <p>Average : {average}</p>
+          <p>Positive : {goodPercntage} %</p>
+      </div>
+        )
+    }
+    return(
+      <p>No FeedBack is avilable to provide statistics</p>
+    )
+   
+  
 }
 const App =()=>{
   const [good,setGood] = useState(0)
@@ -36,6 +44,7 @@ const App =()=>{
         <button onClick={neutralUpdatehandler}>Neutral</button>
         <button onClick={badUpdatehandler}>Bad</button>
       </div>
+      <h1>Statistics</h1>
      <Statistics good={good} bad ={bad} neutral={neutral}/>
 
     </div>
