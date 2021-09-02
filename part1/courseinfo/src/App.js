@@ -29,28 +29,31 @@ const Total =({parts})=>{
 
 }
 const App = () =>{
-  const course = 'Half Stack application development'
-const parts= [
-    {
-    name:'Fundamentals of React',
-    excercies : 10
-  },
-    {
-    name:'Using props to pass data',
-    excercies:7
-  },
-    {
-    name:'State of a component',
-    excercies:14
-  }
-]
+  const course = {
+    name:'Half Stack application development',
+    parts: [
+      {
+      name:'Fundamentals of React',
+      excercies : 10
+    },
+      {
+      name:'Using props to pass data',
+      excercies:7
+    },
+      {
+      name:'State of a component',
+      excercies:14
+    }
+  ]
+}
   return (
     <div>
-      <Header header = {course}/>
-      <Content parts={parts}/>
-      <Total parts = {parts}/>
+      <Header header = {course.name}/>
+      <Content parts={course.parts}/>
+      <Total parts = {course.parts}/>
     </div>
   )
 }
+
 
 export default App
