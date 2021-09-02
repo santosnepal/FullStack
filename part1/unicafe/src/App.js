@@ -4,6 +4,11 @@ const StatisticsLine = ({text,value})=>{
     <p>{text} : {value}</p>
   )
 }
+const Buttons =({text,task})=>{
+  return(
+    <button onClick={task}>{text}</button>
+  )
+}
 const Statistics = ({good,neutral,bad})=>{
   const average = good*1+neutral*0+bad*-1
   const goodPercntage = (good/(good+neutral+bad))*100
@@ -45,9 +50,10 @@ const App =()=>{
     <div>
       <div>
         <h1>Give Your FeedBack</h1>
-        <button onClick={goodUpdatehandler}>Good</button>
-        <button onClick={neutralUpdatehandler}>Neutral</button>
-        <button onClick={badUpdatehandler}>Bad</button>
+        <Buttons text="Good" task={goodUpdatehandler}/>
+        <Buttons text="Neutral" task={neutralUpdatehandler}/>
+        <Buttons text="Bad" task={badUpdatehandler}/>
+        
       </div>
       <h1>Statistics</h1>
      <Statistics good={good} bad ={bad} neutral={neutral}/>
